@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Object Quiz</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h3>1. All Properties of the Object:</h3>
+    <p id="prop-list"></p>
+
+    <h3>2. Object After Deleting 'age' Property:</h3>
+    <pre id="output-object"></pre>
+
+    <script>
+        // Sample object
+        var Person = {
+            firstName : "Tony",
+            lastName : "Lee",
+            age : 50,
+            eyeColor : "Blue"
+        };
+
+        // 1. List all properties
+        var allProps = Object.keys(Person).join(", ");
+        document.getElementById("prop-list").textContent = allProps;
+
+        // 2. Delete the age property
+        delete Person.age;
+
+        // 3. Print the updated object
+        document.getElementById("output-object").textContent = JSON.stringify(Person, null, 2);
+    </script>
+
+</body>
+</html>
